@@ -1,0 +1,179 @@
+.calculator {
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
+  color: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.headerIcon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  color: var(--accent);
+}
+
+.header h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.25rem;
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: white;
+  border-radius: 1rem;
+  padding: 3rem;
+  color: var(--text-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.inputs h3,
+.results h3 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.assumptions {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--background-alt);
+  border-radius: 0.5rem;
+}
+
+.assumptions h4 {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.assumptions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.assumptions li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.assumptions li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+}
+
+.resultCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--background-alt);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.resultIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+
+.resultLabel {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.resultValue {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.totalCard {
+  background: var(--primary);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.totalLabel {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.totalValue {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.payback {
+  margin-bottom: 1.5rem;
+}
+
+.payback p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.payback strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 2rem;
+  }
+}

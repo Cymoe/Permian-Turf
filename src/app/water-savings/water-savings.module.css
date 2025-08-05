@@ -1,0 +1,356 @@
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #002244 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.heroIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.heroContent h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 5vw, 3rem);
+}
+
+.heroContent p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Calculator Section */
+.calculator {
+  padding: 4rem 0;
+  background: var(--background-alt);
+}
+
+.calculatorGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Inputs */
+.inputs {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.inputs h2 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.value {
+  float: right;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.slider {
+  width: 100%;
+  margin-top: 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.advancedToggle {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1.5rem;
+  background: var(--background-alt);
+  border: 2px solid var(--neutral);
+  border-radius: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.advancedToggle:hover {
+  background: var(--neutral);
+  border-color: var(--primary);
+}
+
+.advanced {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Results */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.results h2 {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.resultCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.resultIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--primary);
+}
+
+.resultHeader h3 {
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.resultStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.bigNumber {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.bigNumber small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Cost Breakdown */
+.costBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.costItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: var(--text-secondary);
+}
+
+.costTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  border-top: 2px solid var(--primary);
+  margin-top: 0.5rem;
+}
+
+/* ROI Card */
+.roiCard {
+  background: var(--primary);
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.roiCard h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.roiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.roiGrid .label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.roiGrid .bigNumber {
+  color: white;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions .btn {
+  flex: 1;
+}
+
+.downloadBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: white;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.downloadBtn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Environmental Impact */
+.environmental {
+  background: white;
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 3rem;
+}
+
+.envIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.environmental h3 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+}
+
+.envGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.envGrid strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.envGrid span {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .calculatorGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roiGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .envGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .calculator {
+    padding: 3rem 0;
+  }
+
+  .inputs,
+  .resultCard,
+  .environmental {
+    padding: 1.5rem;
+  }
+
+  .resultStats {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .btn,
+  .downloadBtn {
+    width: 100%;
+  }
+}
