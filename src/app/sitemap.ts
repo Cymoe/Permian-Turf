@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/workforce-housing`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/residential`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -50,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'commercial-turf-installation-permian-basin',
     'rv-park-landscaping-midland-odessa',
     'man-camp-turf-big-spring-tx',
+    'artificial-turf-lubbock-tx',
+    'texas-tech-student-housing-turf',
+    'farm-ranch-artificial-turf-lubbock',
+    'synthetic-grass-amarillo-tx',
+    'commercial-property-turf-amarillo',
+    'panhandle-drought-resistant-turf',
   ];
 
   locationPages.forEach(slug => {

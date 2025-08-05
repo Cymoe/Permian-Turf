@@ -49,10 +49,10 @@ export default function QuoteForm({ source = 'general' }: QuoteFormProps) {
         animate={{ opacity: 1, scale: 1 }}
       >
         <div className={styles.successIcon}>✓</div>
-        <h3>Quote Request Received!</h3>
+        <h3>Water-Free Landscaping Quote Request Received!</h3>
         <p>
-          Thank you for your interest in Permian Turf Solutions. 
-          We&apos;ll contact you within 24 hours with your custom quote.
+          Thank you for your interest in drought-resistant turf solutions. 
+          We&apos;ll contact you within 24 hours with your custom water-free landscaping quote.
         </p>
         <button 
           className="btn btn-primary"
@@ -138,11 +138,11 @@ export default function QuoteForm({ source = 'general' }: QuoteFormProps) {
             required
           >
             <option value="residential">Residential Home</option>
-            <option value="rv-park">RV Park / Man Camp</option>
-            <option value="apartment">Apartment Complex</option>
-            <option value="office">Office Building</option>
+            <option value="rv-park">RV Park / Oil Field Housing</option>
+            <option value="apartment">Workforce Housing Complex</option>
+            <option value="office">Commercial Office Building</option>
             <option value="retail">Retail Property</option>
-            <option value="other">Other Commercial</option>
+            <option value="other">Other Drought-Affected Property</option>
           </select>
         </div>
 
@@ -178,7 +178,7 @@ export default function QuoteForm({ source = 'general' }: QuoteFormProps) {
           value={formData.message}
           onChange={handleChange}
           rows={4}
-          placeholder="Tell us about your project, any specific areas of concern, or questions you have..."
+          placeholder="Tell us about your water usage concerns, drought challenges, or specific areas needing water-free landscaping..."
         />
       </div>
 
@@ -197,7 +197,7 @@ export default function QuoteForm({ source = 'general' }: QuoteFormProps) {
           ) : (
             <>
               <Send size={18} />
-              Get Your Free Quote
+              Get Your Water-Free Quote
             </>
           )}
         </button>

@@ -10,8 +10,8 @@ export default function Footer() {
           <div className={styles.company}>
             <h3>Permian Turf Solutions</h3>
             <p>
-              The Permian Basin&apos;s premier commercial turf specialist. 
-              Water-smart landscapes that save money and look great year-round.
+              The Permian Basin&apos;s premier drought-resistant turf specialist. 
+              Water-free landscaping solutions that eliminate irrigation costs completely.
             </p>
             <div className={styles.certifications}>
               <span>Licensed & Insured</span>
@@ -21,19 +21,19 @@ export default function Footer() {
           </div>
 
           <div className={styles.links}>
-            <h4>Services</h4>
-            <Link href="/commercial#workforce">Workforce Housing</Link>
-            <Link href="/commercial#property">Property Management</Link>
-            <Link href="/residential">Residential</Link>
-            <Link href="/portfolio">Portfolio</Link>
+            <h4>Water-Free Services</h4>
+            <Link href="/workforce-housing">Oil Field Housing Turf</Link>
+            <Link href="/commercial#property">Commercial Property Turf</Link>
+            <Link href="/residential">Drought-Resistant Residential</Link>
+            <Link href="/portfolio">Water-Free Portfolio</Link>
           </div>
 
           <div className={styles.links}>
-            <h4>Resources</h4>
-            <Link href="/water-savings">ROI Calculator</Link>
-            <Link href="/financing">Financing Options</Link>
-            <Link href="/warranty">10-Year Warranty</Link>
-            <Link href="/faq">FAQ</Link>
+            <h4>Drought Resources</h4>
+            <Link href="/water-savings">Drought Water Savings</Link>
+            <Link href="/financing">Water-Free Financing</Link>
+            <Link href="/warranty">Drought Warranty</Link>
+            <Link href="/blog">Drought Tips & Resources</Link>
           </div>
 
           <div className={styles.contact}>
@@ -49,8 +49,8 @@ export default function Footer() {
             <div className={styles.contactItem}>
               <MapPin size={18} />
               <span>
-                Serving Midland, Odessa,<br />
-                and the Permian Basin
+                Drought-Resistant Turf Installation<br />
+                Midland, Odessa & Permian Basin
               </span>
             </div>
           </div>

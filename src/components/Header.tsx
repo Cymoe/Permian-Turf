@@ -2,11 +2,28 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Phone, Calculator } from 'lucide-react';
+import { Menu, X, Phone, Calculator, ChevronDown } from 'lucide-react';
 import styles from './Header.module.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150); // Small delay before closing
+    setHoverTimeout(timeout);
+  };
 
   return (
     <header className={styles.header}>
@@ -17,15 +34,33 @@ export default function Header() {
           </Link>
 
           <div className={styles.navLinks}>
-            <Link href="/commercial" className={styles.navLink}>
-              Commercial
-            </Link>
-            <Link href="/residential" className={styles.navLink}>
-              Residential
-            </Link>
+            <div 
+              className={styles.dropdown}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className={styles.dropdownTrigger}>
+                Services
+                <ChevronDown size={14} className={isServicesOpen ? styles.rotated : ''} />
+              </button>
+              {isServicesOpen && (
+                <div className={styles.dropdownMenu}>
+                  <Link href="/commercial" className={styles.dropdownLink}>
+                    Commercial
+                  </Link>
+                  <Link href="/workforce-housing" className={styles.dropdownLink}>
+                    Workforce Housing
+                  </Link>
+                  <Link href="/residential" className={styles.dropdownLink}>
+                    Residential
+                  </Link>
+                </div>
+              )}
+            </div>
+            
             <Link href="/water-savings" className={styles.navLink}>
               <Calculator size={16} />
-              ROI Calculator
+              Calculator
             </Link>
             <Link href="/portfolio" className={styles.navLink}>
               Portfolio
@@ -60,14 +95,21 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className={styles.mobileMenu}>
-            <Link href="/commercial" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
-              Commercial
-            </Link>
-            <Link href="/residential" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
-              Residential
-            </Link>
+            <div className={styles.mobileSection}>
+              <span className={styles.mobileSectionTitle}>Services</span>
+              <Link href="/commercial" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Commercial
+              </Link>
+              <Link href="/workforce-housing" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Workforce Housing
+              </Link>
+              <Link href="/residential" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Residential
+              </Link>
+            </div>
+            
             <Link href="/water-savings" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
-              ROI Calculator
+              Calculator
             </Link>
             <Link href="/portfolio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
               Portfolio
@@ -78,6 +120,7 @@ export default function Header() {
             <Link href="/blog" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
               Resources
             </Link>
+            
             <a href="tel:432-555-0100" className={styles.mobileLink}>
               Call (432) 555-0100
             </a>

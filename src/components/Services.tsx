@@ -9,20 +9,20 @@ const services = [
   {
     icon: Building2,
     title: 'Workforce Housing',
-    description: 'Specialized turf solutions for RV parks, man camps, and oil field housing. Volume pricing and zero maintenance.',
-    link: '/commercial#workforce',
+    description: 'Specialized oil field housing turf installation for RV parks and man camps. Water-free landscaping with zero maintenance.',
+    link: '/workforce-housing',
     featured: true,
   },
   {
     icon: Users,
     title: 'Property Management',
-    description: 'Annual contracts for apartment complexes and commercial properties. Reduce water bills and maintenance costs.',
+    description: 'Commercial property turf contractors in Odessa and Midland. Reduce water bills by 70% with drought-resistant solutions.',
     link: '/commercial#property',
   },
   {
     icon: Home,
     title: 'Residential Excellence',
-    description: 'Get commercial-grade turf for your home. Same quality trusted by businesses, now for homeowners.',
+    description: 'Drought-resistant turf for Midland TX homes. Water-free landscaping perfect for the Permian Basin climate.',
     link: '/residential',
   },
   {
@@ -43,10 +43,10 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2>Solutions for Every Property</h2>
+          <h2>Water-Free Landscaping Solutions</h2>
           <p>
-            From oil field housing to your backyard, we deliver water-smart landscapes 
-            that save money and look great year-round.
+            From oil field housing to your backyard, we deliver drought-resistant turf 
+            solutions that eliminate water usage and look great year-round in the Permian Basin.
           </p>
         </motion.div>
 

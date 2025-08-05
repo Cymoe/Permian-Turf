@@ -18,13 +18,13 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <h1 className={styles.title}>
-            Save Water. Save Money.
-            <br />
+            Save Water.<br />
+            Save Money.<br />
             <span className={styles.highlight}>Still Stay Green.</span>
           </h1>
           <p className={styles.subtitle}>
-            The Permian Basin&apos;s only turf specialist focused on commercial properties. 
-            Reduce water usage by 70% while maintaining beautiful landscapes year-round.
+            The Permian Basin&apos;s premier drought-resistant turf specialist. Install water-free 
+            landscaping that reduces usage by 70% while maintaining beautiful landscapes year-round.
           </p>
 
           <div className={styles.stats}>
@@ -73,16 +73,12 @@ export default function Hero() {
         >
           <div className={styles.imagePlaceholder}>
             <Image 
-              src="/api/placeholder/600/400" 
+              src="/hero_1.png" 
               alt="Commercial turf installation" 
               width={600}
               height={400}
               className={styles.heroImage}
             />
-            <div className={styles.badge}>
-              <span>10-Year</span>
-              <span>Warranty</span>
-            </div>
           </div>
         </motion.div>
       </div>

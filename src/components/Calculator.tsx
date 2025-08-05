@@ -30,8 +30,8 @@ export default function ROICalculator() {
           viewport={{ once: true }}
         >
           <Calculator className={styles.headerIcon} />
-          <h2>Calculate Your Savings</h2>
-          <p>See how much you&apos;ll save with artificial turf in the Permian Basin</p>
+          <h2>Drought Water Savings Calculator</h2>
+          <p>Calculate savings with water-free landscaping in the Permian Basin&apos;s drought conditions</p>
         </motion.div>
 
         <div className={styles.calculatorGrid}>
@@ -83,10 +83,10 @@ export default function ROICalculator() {
             <div className={styles.assumptions}>
               <h4>Calculations based on:</h4>
               <ul>
-                <li>70% water reduction vs natural grass</li>
-                <li>Zero maintenance after installation</li>
+                <li>70% water reduction with drought-resistant turf</li>
+                <li>Zero maintenance water-free landscaping</li>
                 <li>10-year warranty coverage</li>
-                <li>Permian Basin climate conditions</li>
+                <li>Permian Basin drought conditions</li>
               </ul>
             </div>
           </motion.div>
