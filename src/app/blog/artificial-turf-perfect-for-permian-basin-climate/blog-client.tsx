@@ -138,8 +138,8 @@ export default function BlogClient() {
             <h2>The Drought-Resistant Future</h2>
             
             <p>
-              With permanent drought conditions in the Permian Basin, water-free landscaping isn't 
-              optional – it's essential. Property owners installing drought-resistant turf now will 
+              With permanent drought conditions in the Permian Basin, water-free landscaping isn&apos;t 
+              optional – it&apos;s essential. Property owners installing drought-resistant turf now will 
               eliminate water costs forever while maintaining beautiful landscapes through any drought.
             </p>
 

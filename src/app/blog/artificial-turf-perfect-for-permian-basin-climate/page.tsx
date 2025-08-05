@@ -10,4 +10,3 @@ export const metadata: Metadata = {
 export default function BlogPostPage() {
   return <BlogClient />;
 }
-}

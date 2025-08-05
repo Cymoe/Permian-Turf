@@ -54,6 +54,9 @@ export default function Header() {
                   <Link href="/residential" className={styles.dropdownLink}>
                     Residential
                   </Link>
+                  <Link href="/green-walls" className={styles.dropdownLink}>
+                    Green Walls
+                  </Link>
                 </div>
               )}
             </div>
@@ -105,6 +108,9 @@ export default function Header() {
               </Link>
               <Link href="/residential" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
                 Residential
+              </Link>
+              <Link href="/green-walls" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Green Walls
               </Link>
             </div>
             

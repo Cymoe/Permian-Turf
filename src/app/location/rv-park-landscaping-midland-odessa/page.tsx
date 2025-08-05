@@ -15,4 +15,3 @@ export const metadata: Metadata = {
 export default function RVParkLandscapingPage() {
   return <RVParkClient />;
 }
-}

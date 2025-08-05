@@ -347,6 +347,74 @@
   transform: translateX(3px);
 }
 
+/* Blog Post Styles */
+.blogPost {
+  padding: 80px 0;
+  background: white;
+}
+
+.blogPost h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.blogPost h2 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.blogPost h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.blogPost p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.blogPost ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.blogPost li {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.imageBlock {
+  margin: 2rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.imageBlock img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.imageCaption {
+  padding: 1rem;
+  background: #f8f9fa;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
 @media (max-width: 1024px) {
   .blogLayout {
     grid-template-columns: 1fr;

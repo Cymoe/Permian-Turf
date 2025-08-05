@@ -47,6 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/green-walls`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.9,
+    },
   ];
 
   // Location pages
@@ -86,6 +92,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'top-5-rv-parks-midland-odessa-save-water', date: '2024-01-08' },
     { slug: 'oil-field-housing-smart-landscaping-solution', date: '2024-01-01' },
     { slug: 'calculating-water-savings-midland-drought-reality', date: '2023-12-25' },
+    { slug: 'man-camp-landscaping-zero-maintenance', date: '2024-01-22' },
+    { slug: 'property-managers-guide-turf-roi', date: '2024-01-29' },
+    { slug: 'permian-plaza-apartments-transformation', date: '2024-02-05' },
+    { slug: 'bbb-accredited-midland-contractors', date: '2024-02-12' },
+    { slug: 'purchase-green-alternative-midland', date: '2024-02-19' },
+    { slug: 'lone-star-turf-competitors', date: '2024-02-26' },
+    { slug: 'affordable-artificial-grass-odessa-tx', date: '2024-03-04' },
+    { slug: 'biophilic-design-west-texas-benefits', date: '2024-03-11' },
   ];
 
   blogPosts.forEach(post => {

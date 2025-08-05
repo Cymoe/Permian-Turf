@@ -1,0 +1,763 @@
+.hero {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-bottom: -100px;
+}
+
+.heroImage img {
+  object-position: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-top: -50px;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.4rem;
+  color: #555;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat svg {
+  width: 40px;
+  height: 40px;
+  color: #4caf50;
+  margin-bottom: 0.5rem;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+}
+
+.stat span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.heroCTA {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Biophilic Introduction */
+.biophilicIntro {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.biophilicContent h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.problem,
+.solution {
+  background: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 12px;
+}
+
+.problem h3,
+.solution h3 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.problem ul,
+.solution ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.problem li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  color: #d32f2f;
+}
+
+.problem li::before {
+  content: '✗';
+  position: absolute;
+  left: 0;
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.singaporeNote {
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  border-left: 4px solid #4caf50;
+}
+
+.singaporeNote strong {
+  color: #2e7d32;
+}
+
+/* Benefits Section */
+.benefits {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.benefits h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.benefitCard {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefitCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.benefitCard svg {
+  color: #4caf50;
+  margin-bottom: 1.5rem;
+}
+
+.benefitCard h3 {
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.benefitCard ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.benefitCard li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+.benefitCard li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.research {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+}
+
+.benefitCTA {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.benefitCTA p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Applications Section */
+.applications {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.applications h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.applicationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.applicationCard {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.applicationCard:hover {
+  border-color: #4caf50;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+}
+
+.applicationCard h3 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.applicationCard ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.applicationCard li {
+  padding: 0.5rem 0;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.applicationCard li:last-child {
+  border-bottom: none;
+}
+
+.applicationBenefit {
+  background: #e8f5e9;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.applicationBenefit strong {
+  color: #2e7d32;
+}
+
+/* Product Showcase Section */
+.productShowcase {
+  padding: 80px 0;
+  background: white;
+}
+
+.productShowcase h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.productShowcase .subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.showcaseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.showcaseItem {
+  background: #f8f9fa;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.showcaseItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.showcaseItem img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.showcaseItem h3 {
+  padding: 1.5rem 1.5rem 0.5rem;
+  color: #1a1a1a;
+  font-size: 1.4rem;
+}
+
+.showcaseItem p {
+  padding: 0 1.5rem 1.5rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Why Artificial Section */
+.whyArtificial {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.whyArtificial h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.naturalChallenges,
+.artificialAdvantages {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.naturalChallenges h3 {
+  color: #d32f2f;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.artificialAdvantages h3 {
+  color: #2e7d32;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.challengesList,
+.advantagesList {
+  list-style: none;
+  padding: 0;
+}
+
+.challengesList li,
+.advantagesList li {
+  display: flex;
+  align-items: start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.challengeIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #d32f2f;
+  margin-top: 2px;
+}
+
+.advantageIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #4caf50;
+  margin-top: 2px;
+}
+
+.realismNote {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.realismNote h3 {
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.realismNote ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.realismNote li {
+  position: relative;
+  padding-left: 2rem;
+  color: #555;
+}
+
+.realismNote li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+/* Process Section */
+.process {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.process h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  padding-top: 4rem;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background: #4caf50;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.step h3 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.step p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ROI Section */
+.roi {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.roi h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.roiCalculator {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.roiCalculator h3 {
+  text-align: center;
+  color: #2e7d32;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.roiGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.investment,
+.returns {
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.investment {
+  background: #fee;
+  border: 1px solid #fcc;
+}
+
+.returns {
+  background: #efe;
+  border: 1px solid #cfc;
+}
+
+.investment h4 {
+  color: #c62828;
+  margin-bottom: 1rem;
+}
+
+.returns h4 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+.investment ul,
+.returns ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.investment li,
+.returns li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.investment li:last-child,
+.returns li:last-child {
+  border-bottom: none;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  border-top: 2px solid;
+}
+
+.investment .total {
+  color: #c62828;
+  border-color: #fcc;
+}
+
+.returns .total {
+  color: #2e7d32;
+  border-color: #cfc;
+}
+
+.roiSummary {
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.roiSummary strong {
+  color: #2e7d32;
+  font-size: 1.2rem;
+}
+
+
+/* CTA Section */
+.cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+  color: #fff;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ctaContent > p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+}
+
+.ctaBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ctaBox h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.ctaBox ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBox li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.ctaBox li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ctaNote {
+  opacity: 0.9;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroImage {
+    height: 400px;
+  }
+
+  .heroContent {
+    padding: 2rem;
+    margin-top: -30px;
+  }
+
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .heroStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .introGrid,
+  .comparisonGrid,
+  .roiGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .benefitsGrid,
+  .applicationGrid,
+  .processSteps {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBox {
+    padding: 2rem;
+  }
+}

@@ -56,13 +56,105 @@ const blogPosts = [
     category: 'Water Conservation',
     image: '/api/placeholder/800/450',
   },
+  {
+    id: 5,
+    slug: 'man-camp-landscaping-zero-maintenance',
+    title: 'Man Camp Landscaping: Zero Maintenance Solutions',
+    excerpt: 'Discover why artificial turf is the perfect zero-maintenance landscaping solution for man camps and workforce housing in West Texas oil fields.',
+    author: 'Mike Thompson',
+    date: '2024-01-22',
+    readTime: '6 min read',
+    category: 'Commercial',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 6,
+    slug: 'property-managers-guide-turf-roi',
+    title: 'Property Manager\'s Guide to Turf ROI in West Texas',
+    excerpt: 'Complete ROI analysis guide for property managers considering artificial turf in Midland-Odessa. Calculate savings, understand costs, and make data-driven decisions.',
+    author: 'Sarah Johnson',
+    date: '2024-01-29',
+    readTime: '10 min read',
+    category: 'Commercial',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 7,
+    slug: 'permian-plaza-apartments-transformation',
+    title: 'Before/After: Permian Plaza Apartments Transformation',
+    excerpt: 'See the dramatic transformation of Permian Plaza Apartments in Midland with artificial turf. Complete case study with photos, costs, and resident feedback.',
+    author: 'David Chen',
+    date: '2024-02-05',
+    readTime: '7 min read',
+    category: 'Case Studies',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 8,
+    slug: 'bbb-accredited-midland-contractors',
+    title: 'BBB Accredited: What It Means for Midland Contractors',
+    excerpt: 'Learn why BBB accreditation matters when selecting artificial turf contractors in Midland-Odessa. Protect your investment with verified, trusted professionals.',
+    author: 'Jennifer Martinez',
+    date: '2024-02-12',
+    readTime: '5 min read',
+    category: 'Industry Insights',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 9,
+    slug: 'purchase-green-alternative-midland',
+    title: 'Purchase Green Alternative in Midland',
+    excerpt: 'Looking for a Purchase Green alternative? Compare prices, service, and local expertise. See why more Midland property owners choose local installers.',
+    author: 'David Chen',
+    date: '2024-02-19',
+    readTime: '8 min read',
+    category: 'Comparison Guides',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 10,
+    slug: 'lone-star-turf-competitors',
+    title: 'Comparing Lone Star Turf & Competitors',
+    excerpt: 'Comprehensive comparison of artificial turf installers in Midland-Odessa. See pricing, warranties, and service differences side-by-side.',
+    author: 'Mike Thompson',
+    date: '2024-02-26',
+    readTime: '10 min read',
+    category: 'Comparison Guides',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 11,
+    slug: 'affordable-artificial-grass-odessa-tx',
+    title: 'Finding Affordable Artificial Grass in Odessa',
+    excerpt: 'Complete price guide for budget-conscious buyers. Learn how to get quality turf without breaking the bank, plus financing options.',
+    author: 'Sarah Johnson',
+    date: '2024-03-04',
+    readTime: '7 min read',
+    category: 'Comparison Guides',
+    image: '/api/placeholder/800/450',
+  },
+  {
+    id: 12,
+    slug: 'biophilic-design-west-texas-benefits',
+    title: 'Why Biophilic Design is Essential for West Texas Living',
+    excerpt: 'In the vast, arid landscape of the Permian Basin, the human need for connection with nature becomes even more critical. Discover how biophilic design can transform your space.',
+    author: 'Dr. Sarah Johnson',
+    date: '2024-03-11',
+    readTime: '8 min read',
+    category: 'Design & Wellness',
+    image: '/api/placeholder/800/450',
+    featured: true,
+  },
 ];
 
 const categories = [
-  { name: 'All Posts', count: 4 },
+  { name: 'All Posts', count: 12 },
   { name: 'Water Conservation', count: 2 },
-  { name: 'Commercial', count: 1 },
-  { name: 'Case Studies', count: 1 },
+  { name: 'Commercial', count: 3 },
+  { name: 'Case Studies', count: 2 },
+  { name: 'Industry Insights', count: 1 },
+  { name: 'Comparison Guides', count: 3 },
+  { name: 'Design & Wellness', count: 1 },
 ];
 
 export default function Blog() {
@@ -204,7 +296,7 @@ export default function Blog() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.2 }}
               >
                 <h3>Free Water Savings Guide</h3>
                 <div className={styles.ctaCard}>

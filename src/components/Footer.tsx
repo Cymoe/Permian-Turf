@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.bottom}>
-          <p>&copy; 2024 Permian Turf Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Permian Turf Solutions. All rights reserved.</p>
           <div className={styles.legal}>
             <Link href="/privacy">Privacy Policy</Link>
             <span>•</span>

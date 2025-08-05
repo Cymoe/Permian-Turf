@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import { Building2, Users, Shield, TrendingUp, Clock, Award } from 'lucide-react';
+import { Building2, Users, Shield, TrendingUp, Clock, Award, Leaf } from 'lucide-react';
 import styles from './commercial.module.css';
 
 const stats = [
@@ -39,6 +39,11 @@ const benefits = [
     icon: Clock,
     title: 'Office Complexes',
     description: 'Professional landscapes that impress clients without the ongoing maintenance requirements.',
+  },
+  {
+    icon: Leaf,
+    title: 'Green Walls & Biophilic Design',
+    description: 'Transform interior and exterior walls into lush vertical gardens. Boost productivity by 15% with zero water usage.',
   },
   {
     icon: Award,
@@ -146,9 +151,9 @@ export default function CommercialPageClient() {
                 </div>
               </div>
               <p>
-                "We're saving a fortune on water and our residents love it. 
+                &ldquo;We&apos;re saving a fortune on water and our residents love it. 
                 The turf looks perfect year-round, even with heavy RV traffic. 
-                Best investment we've made for our property."
+                Best investment we&apos;ve made for our property.&rdquo;
               </p>
               <cite>- Jake Thompson, Property Manager</cite>
             </motion.div>
@@ -159,7 +164,7 @@ export default function CommercialPageClient() {
               viewport={{ once: true }}
             >
               <Image
-                src="/api/placeholder/600/400"
+                src="/hero_1.png"
                 alt="Midessa RV Resort turf installation"
                 width={600}
                 height={400}
@@ -245,7 +250,7 @@ export default function CommercialPageClient() {
             <h2>Ready to Reduce Your Water Bills?</h2>
             <p>
               Get a free property assessment and ROI analysis. 
-              See exactly how much you'll save with commercial-grade artificial turf.
+              See exactly how much you&apos;ll save with commercial-grade artificial turf.
             </p>
             <div className={styles.ctaButtons}>
               <a href="/quote" className="btn btn-primary">Get Commercial Quote</a>

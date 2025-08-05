@@ -3,23 +3,38 @@
 ## 🎯 Target Keywords
 
 ### Primary Keywords (High Priority)
-- [ ] "artificial turf installation Midland TX"
-- [ ] "synthetic grass Odessa Texas"
-- [ ] "commercial turf installation Permian Basin"
-- [ ] "RV park landscaping Midland"
-- [ ] "man camp turf West Texas"
+- [x] "artificial turf installation Midland TX" ✓
+- [x] "synthetic grass Odessa Texas" ✓
+- [x] "commercial turf installation Permian Basin" ✓
+- [x] "RV park landscaping Midland" ✓
+- [x] "man camp turf West Texas" ✓
+- [x] "artificial turf installation Lubbock TX" ✓
+- [x] "synthetic grass Amarillo TX" ✓
 
 ### Long-tail Keywords
-- [ ] "workforce housing landscaping Midland Odessa"
-- [ ] "oil field housing turf installation"
-- [ ] "water-free landscaping Permian Basin"
-- [ ] "drought-resistant turf Midland TX"
-- [ ] "commercial property turf contractors Odessa"
+- [x] "workforce housing landscaping Midland Odessa" ✓
+- [x] "oil field housing turf installation" ✓
+- [x] "water-free landscaping Permian Basin" ✓
+- [x] "drought-resistant turf Midland TX" ✓
+- [x] "commercial property turf contractors Odessa" ✓
+- [x] "Texas Tech student housing artificial turf" ✓
+- [x] "farm ranch artificial turf Lubbock" ✓
+- [x] "commercial property turf contractors Amarillo" ✓
+- [x] "Panhandle drought-resistant turf" ✓
 
 ### Competitor Keywords
-- [ ] "Purchase Green alternative Midland"
-- [ ] "Lone Star turf competitors"
-- [ ] "affordable artificial grass Odessa TX"
+- [x] "Purchase Green alternative Midland" ✓
+- [x] "Lone Star turf competitors" ✓
+- [x] "affordable artificial grass Odessa TX" ✓
+
+### Biophilic Design & Green Walls Keywords (NEW)
+- [x] "artificial green walls Midland TX" ✓
+- [x] "biophilic design West Texas" ✓
+- [x] "vertical gardens Odessa" ✓
+- [x] "maintenance-free green walls Permian Basin" ✓
+- [x] "office green walls Midland" ✓
+- [x] "zero water vertical gardens" ✓
+- [x] "artificial living walls Texas" ✓
 
 ---
 
@@ -212,6 +227,12 @@ Email: info@permianturfpro.com
 - [x] /location/commercial-turf-installation-permian-basin ✓
 - [x] /location/rv-park-landscaping-midland-odessa ✓
 - [x] /location/man-camp-turf-big-spring-tx ✓
+- [x] /location/artificial-turf-lubbock-tx ✓ (NEW)
+- [x] /location/texas-tech-student-housing-turf ✓ (NEW)
+- [x] /location/farm-ranch-artificial-turf-lubbock ✓ (NEW)
+- [x] /location/synthetic-grass-amarillo-tx ✓ (NEW)
+- [x] /location/commercial-property-turf-amarillo ✓ (NEW)
+- [x] /location/panhandle-drought-resistant-turf ✓ (NEW)
 
 ### Blog Posts - Month 1 (Completed ✓)
 - [x] Week 1: "Why Artificial Turf is Perfect for Permian Basin's Climate" ✓
@@ -219,11 +240,20 @@ Email: info@permianturfpro.com
 - [x] Week 3: "Oil Field Housing: The Smart Landscaping Solution" ✓
 - [x] Week 4: "Calculating Water Savings: Midland's Drought Reality" ✓
 
-### Blog Posts - Month 2
-- [ ] Week 1: "Man Camp Landscaping: Zero Maintenance Solutions"
-- [ ] Week 2: "Property Manager's Guide to Turf ROI in West Texas"
-- [ ] Week 3: "Before/After: Permian Plaza Apartments Transformation"
-- [ ] Week 4: "BBB Accredited: What It Means for Midland Contractors"
+### Blog Posts - Month 2 (Completed ✓)
+- [x] Week 1: "Man Camp Landscaping: Zero Maintenance Solutions" ✓
+- [x] Week 2: "Property Manager's Guide to Turf ROI in West Texas" ✓
+- [x] Week 3: "Before/After: Permian Plaza Apartments Transformation" ✓
+- [x] Week 4: "BBB Accredited: What It Means for Midland Contractors" ✓
+
+### Competitor Comparison Posts (Completed ✓)
+- [x] "Purchase Green Alternative in Midland" ✓
+- [x] "Comparing Lone Star Turf & Competitors" ✓
+- [x] "Finding Affordable Artificial Grass in Odessa" ✓
+
+### Biophilic Design Content (NEW) - Completed ✓
+- [x] Green Walls Service Page ✓
+- [x] "Why Biophilic Design is Essential for West Texas Living" blog post ✓
 
 ### Case Studies (Completed ✓)
 - [x] Midessa RV Park (15,000 sq ft project) ✓
@@ -284,7 +314,14 @@ Email: info@permianturfpro.com
 - [ ] 150+ reviews (highest in market)
 - [ ] 500% increase in organic traffic
 - [ ] Recognized as market leader
-- [ ] Expand to Lubbock/Amarillo
+- [x] Expand to Lubbock/Amarillo ✓ (COMPLETED)
+- [ ] Establish green walls as 20% of revenue
+
+### New Service Launch Goals (Green Walls)
+- [ ] Rank top 3 for "artificial green walls Midland TX" (3 months)
+- [ ] Complete 5 showcase green wall installations (6 months)
+- [ ] Partner with 3 commercial properties for green walls (6 months)
+- [ ] Create case studies for biophilic design ROI (ongoing)
 
 ---
 
@@ -307,5 +344,5 @@ Email: info@permianturfpro.com
 
 ---
 
-*Last Updated: August 5, 2025*
+*Last Updated: August 5, 2025* (Added Green Walls service & biophilic design focus)
 *Next Review: September 5, 2025*

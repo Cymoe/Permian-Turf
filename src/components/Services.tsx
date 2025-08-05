@@ -2,10 +2,18 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Building2, Home, Users, Wrench } from 'lucide-react';
+import { Building2, Home, Users, Wrench, Leaf } from 'lucide-react';
 import styles from './Services.module.css';
 
 const services = [
+  {
+    icon: Leaf,
+    title: 'Artificial Green Walls',
+    description: 'Transform stark walls into lush vertical gardens. Boost productivity by 15% with biophilic design - zero water needed.',
+    link: '/green-walls',
+    featured: true,
+    isNew: true,
+  },
   {
     icon: Building2,
     title: 'Workforce Housing',
@@ -66,8 +74,11 @@ export default function Services() {
                 <service.icon className={styles.icon} />
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
-                {service.featured && (
+                {service.featured && !service.isNew && (
                   <span className={styles.badge}>Most Popular</span>
+                )}
+                {service.isNew && (
+                  <span className={styles.badgeNew}>NEW</span>
                 )}
                 <span className={styles.arrow}>→</span>
               </Link>

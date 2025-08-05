@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import QuoteForm from '@/components/QuoteForm';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Clock, CheckCircle, Calendar, School, Wheat, Shield } from 'lucide-react';
+import { MapPin, Phone, CheckCircle, Calendar, School, Wheat, Shield } from 'lucide-react';
 import styles from '../location.module.css';
 
 export default function LubbockClient() {

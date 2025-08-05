@@ -4,7 +4,7 @@
   overflow: hidden;
 }
 
-.hero .container {
+.heroGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
@@ -81,6 +81,8 @@
 
 .imageWrapper {
   position: relative;
+  max-width: 900px;
+  margin-left: auto;
 }
 
 .imagePlaceholder {
@@ -101,13 +103,13 @@
   position: absolute;
   top: 2rem;
   right: 2rem;
-  background: var(--accent);
+  background: #4caf50;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 700;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
 .badge span {
@@ -124,7 +126,7 @@
 }
 
 @media (max-width: 1024px) {
-  .hero .container {
+  .heroGrid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
