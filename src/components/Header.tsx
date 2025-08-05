@@ -14,7 +14,6 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link href="/" className={styles.logo}>
             <span className={styles.logoText}>Permian Turf Solutions</span>
-            <span className={styles.tagline}>Water-Smart Landscapes for West Texas</span>
           </Link>
 
           <div className={styles.navLinks}>
@@ -25,20 +24,23 @@ export default function Header() {
               Residential
             </Link>
             <Link href="/water-savings" className={styles.navLink}>
-              <Calculator size={18} />
+              <Calculator size={16} />
               ROI Calculator
             </Link>
             <Link href="/portfolio" className={styles.navLink}>
               Portfolio
             </Link>
-            <Link href="/about" className={styles.navLink}>
-              About
+            <Link href="/case-studies" className={styles.navLink}>
+              Case Studies
+            </Link>
+            <Link href="/blog" className={styles.navLink}>
+              Resources
             </Link>
           </div>
 
           <div className={styles.navActions}>
             <a href="tel:432-555-0100" className={styles.phoneLink}>
-              <Phone size={18} />
+              <Phone size={16} />
               <span>(432) 555-0100</span>
             </a>
             <Link href="/quote" className="btn btn-primary">
@@ -70,8 +72,11 @@ export default function Header() {
             <Link href="/portfolio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
               Portfolio
             </Link>
-            <Link href="/about" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
-              About
+            <Link href="/case-studies" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+              Case Studies
+            </Link>
+            <Link href="/blog" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+              Resources
             </Link>
             <a href="tel:432-555-0100" className={styles.mobileLink}>
               Call (432) 555-0100

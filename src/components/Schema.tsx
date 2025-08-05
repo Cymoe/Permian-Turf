@@ -1,25 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
+'use client';
 
-export const metadata: Metadata = {
-  title: "Permian Turf Solutions - Commercial Artificial Turf Installation | Midland-Odessa",
-  description: "The Permian Basin's premier commercial turf specialist. Save 70% on water bills with artificial turf installation for RV parks, man camps, and properties. Serving Midland, Odessa, and West Texas.",
-  keywords: "artificial turf Midland, commercial turf installation Odessa, RV park landscaping, man camp turf, water-saving landscaping Permian Basin",
-  openGraph: {
-    title: "Permian Turf Solutions - Water-Smart Landscapes for West Texas",
-    description: "Save water and money with commercial-grade artificial turf. Specializing in workforce housing, property management, and residential installations.",
-    type: "website",
-    locale: "en_US",
-    siteName: "Permian Turf Solutions",
-  },
-};
+import { usePathname } from 'next/navigation';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const schemaData = {
+export default function Schema() {
+  const pathname = usePathname();
+  
+  const baseSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://permianturfpro.com/#organization",
@@ -62,6 +48,10 @@ export default function RootLayout({
       }
     ],
     "priceRange": "$$-$$$",
+    "servesCuisine": null,
+    "acceptsReservations": null,
+    "menu": null,
+    "hasMap": "https://maps.google.com/?q=Permian+Turf+Solutions+Midland+TX",
     "areaServed": [
       {
         "@type": "City",
@@ -167,15 +157,113 @@ export default function RootLayout({
     }
   };
 
+  // Page-specific schema additions
+  const pageSchemas: { [key: string]: Record<string, unknown> } = {
+    '/': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/"
+      }
+    },
+    '/commercial': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/commercial",
+        "name": "Commercial Turf Installation Services - Permian Basin",
+        "description": "Professional artificial turf installation for commercial properties, RV parks, and workforce housing in Midland-Odessa."
+      }
+    },
+    '/residential': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/residential",
+        "name": "Residential Turf Installation - Midland & Odessa TX",
+        "description": "Transform your home with beautiful, water-saving artificial grass. Perfect for West Texas climate."
+      }
+    },
+    '/portfolio': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/portfolio",
+        "name": "Turf Installation Portfolio - Before & After Projects",
+        "description": "See our completed artificial turf installations across the Permian Basin. Real projects, real results."
+      }
+    },
+    '/water-savings': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/water-savings",
+        "name": "Water Savings Calculator - Artificial Turf ROI",
+        "description": "Calculate how much water and money you can save with artificial turf in the Permian Basin."
+      }
+    },
+    '/quote': {
+      "@type": ["LocalBusiness", "LandscapingBusiness"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://permianturfpro.com/quote",
+        "name": "Get a Free Turf Installation Quote",
+        "description": "Request a free quote for artificial turf installation in Midland, Odessa, and surrounding areas."
+      },
+      "potentialAction": {
+        "@type": "ScheduleAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://permianturfpro.com/quote",
+          "actionPlatform": [
+            "http://schema.org/DesktopWebPlatform",
+            "http://schema.org/MobileWebPlatform"
+          ]
+        },
+        "result": {
+          "@type": "Reservation",
+          "name": "Free Turf Installation Quote"
+        }
+      }
+    }
+  };
+
+  // Merge base schema with page-specific schema
+  const currentPageSchema = pageSchemas[pathname] || {};
+  const schema = { ...baseSchema, ...currentPageSchema };
+
+  // Add breadcrumb schema for non-home pages
+  const breadcrumbSchema = pathname !== '/' ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://permianturfpro.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": pathname.split('/')[1].charAt(0).toUpperCase() + pathname.split('/')[1].slice(1).replace('-', ' '),
+        "item": `https://permianturfpro.com${pathname}`
+      }
+    ]
+  } : null;
+
   return (
-    <html lang="en">
-      <body>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      {breadcrumbSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
-        {children}
-      </body>
-    </html>
+      )}
+    </>
   );
 }
