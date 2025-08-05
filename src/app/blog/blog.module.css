@@ -86,16 +86,16 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: var(--gray-600);
+  color: #4b5563;
   margin-bottom: 1rem;
 }
 
 .postMeta svg {
-  color: var(--gray-400);
+  color: #6b7280;
 }
 
 .divider {
-  color: var(--gray-300);
+  color: #9ca3af;
   margin: 0 0.25rem;
 }
 
@@ -288,12 +288,14 @@
 }
 
 .categoryButton.active .count {
-  background: rgba(255, 255, 255, 0.2);
+  background: #FF6B35;
   color: white;
+  font-weight: 700;
 }
 
 .count {
-  background: white;
+  background: #f3f4f6;
+  color: #374151;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-size: 0.75rem;
