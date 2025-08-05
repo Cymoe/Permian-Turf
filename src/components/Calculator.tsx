@@ -31,7 +31,7 @@ export default function ROICalculator() {
         >
           <Calculator className={styles.headerIcon} />
           <h2>Calculate Your Savings</h2>
-          <p>See how much you'll save with artificial turf in the Permian Basin</p>
+          <p>See how much you&apos;ll save with artificial turf in the Permian Basin</p>
         </motion.div>
 
         <div className={styles.calculatorGrid}>

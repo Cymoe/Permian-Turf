@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -61,7 +63,7 @@ export default function Commercial() {
           >
             <h1>Commercial Turf Solutions</h1>
             <p className={styles.subtitle}>
-              The Permian Basin's only turf specialist focused on commercial properties. 
+              The Permian Basin&apos;s only turf specialist focused on commercial properties. 
               From RV parks to apartment complexes, we deliver water-free landscapes that save money.
             </p>
             <div className={styles.heroStats}>
@@ -87,7 +89,7 @@ export default function Commercial() {
           >
             <h2>Workforce Housing Specialists</h2>
             <p>
-              The oil boom has created unique housing challenges. We're the only company 
+              The oil boom has created unique housing challenges. We&apos;re the only company 
               that understands the specific needs of man camps, RV parks, and workforce housing.
             </p>
           </motion.div>
@@ -112,9 +114,9 @@ export default function Commercial() {
               <div className={styles.caseStudy}>
                 <h4>Case Study: Midessa RV Park</h4>
                 <p>
-                  "Permian Turf Solutions transformed our 260-unit RV park. 
-                  We're saving $8,000/month on water and our occupancy is up 15% 
-                  due to the improved appearance."
+                  &quot;Permian Turf Solutions transformed our 260-unit RV park. 
+                  We&apos;re saving $8,000/month on water and our occupancy is up 15% 
+                  due to the improved appearance.&quot;
                 </p>
                 <cite>- Jake Thompson, Property Manager</cite>
               </div>
@@ -126,7 +128,13 @@ export default function Commercial() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img src="/api/placeholder/600/400" alt="RV Park with artificial turf" />
+              <Image 
+                src="/api/placeholder/600/400" 
+                alt="RV Park with artificial turf"
+                width={600}
+                height={400}
+                className={styles.projectImage}
+              />
               <div className={styles.imageCaption}>
                 Before & After: 15,000 sq ft RV park transformation
               </div>
@@ -231,7 +239,7 @@ export default function Commercial() {
             <h2>Ready to Transform Your Commercial Property?</h2>
             <p>
               Get a custom quote with ROI analysis for your property. 
-              We'll show you exactly how much you'll save.
+              We&apos;ll show you exactly how much you&apos;ll save.
             </p>
             <div className={styles.ctaActions}>
               <button className="btn btn-primary">Get Commercial Quote</button>

@@ -21,7 +21,7 @@ export default function Quote() {
           >
             <h1>Get Your Free Quote</h1>
             <p>
-              Join hundreds of West Texas property owners who've made the switch to 
+              Join hundreds of West Texas property owners who&apos;ve made the switch to 
               water-free, maintenance-free turf. Get your custom quote with ROI analysis today.
             </p>
           </motion.div>
@@ -48,7 +48,7 @@ export default function Quote() {
               transition={{ delay: 0.3 }}
             >
               <div className={styles.infoCard}>
-                <h3>What's Included</h3>
+                <h3>What&apos;s Included</h3>
                 <ul className={styles.checklist}>
                   <li>Free on-site consultation</li>
                   <li>Detailed measurements</li>
@@ -122,7 +122,7 @@ export default function Quote() {
             <div className={styles.faqItem}>
               <h3>How long is the quote valid?</h3>
               <p>
-                Quotes are valid for 30 days. We'll honor the price even if 
+                Quotes are valid for 30 days. We&apos;ll honor the price even if 
                 material costs increase during that time.
               </p>
             </div>

@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
@@ -17,7 +19,7 @@ const projects = [
     date: 'October 2023',
     description: 'Complete transformation of 260-unit RV park common areas. Reduced water usage by 100% and improved resident satisfaction.',
     features: ['High-traffic durability', 'Pet-friendly areas', 'Zero maintenance'],
-    testimonial: 'We\'re saving $8,000/month on water and our occupancy is up 15%.',
+    testimonial: 'We&apos;re saving $8,000/month on water and our occupancy is up 15%.',
     clientName: 'Jake Thompson',
     clientTitle: 'Property Manager',
     images: {
@@ -138,7 +140,7 @@ export default function Portfolio() {
             <h1>Our Portfolio</h1>
             <p>
               See the transformation. From brown patches to permanent green, 
-              we've helped hundreds of Permian Basin properties save water and money.
+              we&apos;ve helped hundreds of Permian Basin properties save water and money.
             </p>
           </motion.div>
         </div>
@@ -176,9 +178,11 @@ export default function Portfolio() {
             >
               <div className={styles.imageSection}>
                 <div className={styles.imageWrapper}>
-                  <img
+                  <Image
                     src={showBefore ? currentProject.images.before : currentProject.images.after}
                     alt={`${currentProject.title} - ${showBefore ? 'Before' : 'After'}`}
+                    width={800}
+                    height={600}
                     className={styles.projectImage}
                   />
                   <div className={styles.imageControls}>
@@ -254,7 +258,7 @@ export default function Portfolio() {
 
                 <div className={styles.testimonial}>
                   <Award className={styles.quoteIcon} />
-                  <blockquote>"{currentProject.testimonial}"</blockquote>
+                  <blockquote>&quot;{currentProject.testimonial}&quot;</blockquote>
                   <cite>
                     <strong>{currentProject.clientName}</strong>
                     <span>{currentProject.clientTitle}</span>

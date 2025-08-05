@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Droplet, DollarSign, Zap } from 'lucide-react';
@@ -21,7 +23,7 @@ export default function Hero() {
             <span className={styles.highlight}>Still Stay Green.</span>
           </h1>
           <p className={styles.subtitle}>
-            The Permian Basin's only turf specialist focused on commercial properties. 
+            The Permian Basin&apos;s only turf specialist focused on commercial properties. 
             Reduce water usage by 70% while maintaining beautiful landscapes year-round.
           </p>
 
@@ -70,9 +72,11 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className={styles.imagePlaceholder}>
-            <img 
+            <Image 
               src="/api/placeholder/600/400" 
               alt="Commercial turf installation" 
+              width={600}
+              height={400}
               className={styles.heroImage}
             />
             <div className={styles.badge}>

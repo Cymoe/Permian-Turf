@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, Droplet, DollarSign, TrendingDown, Leaf, Download } from 'lucide-react';
+import { Droplet, DollarSign, Leaf, Download } from 'lucide-react';
 import styles from './water-savings.module.css';
 
 export default function WaterSavings() {
@@ -19,7 +19,7 @@ export default function WaterSavings() {
   const [irrigationMonths, setIrrigationMonths] = useState(8);
   const [maintenanceCost, setMaintenanceCost] = useState(0.5);
   const [mowingFrequency, setMowingFrequency] = useState(30);
-  const [fertilizerApps, setFertilizerApps] = useState(4);
+  const [fertilizerApps] = useState(4);
 
   // Calculations
   const gallonsPerSqFtPerWeek = propertyType === 'commercial' ? 0.75 : 0.62;
@@ -57,8 +57,8 @@ export default function WaterSavings() {
             <Droplet className={styles.heroIcon} />
             <h1>Water Savings Calculator</h1>
             <p>
-              See exactly how much water and money you'll save with artificial turf 
-              in the Permian Basin's challenging climate.
+              See exactly how much water and money you&apos;ll save with artificial turf 
+              in the Permian Basin&apos;s challenging climate.
             </p>
           </motion.div>
         </div>

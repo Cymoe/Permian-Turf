@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -85,7 +87,7 @@ export default function Residential() {
               <button className="btn btn-outline">View Gallery</button>
             </div>
             <p className={styles.trust}>
-              Join 200+ West Texas homeowners who've made the switch
+              Join 200+ West Texas homeowners who&apos;ve made the switch
             </p>
           </motion.div>
 
@@ -95,7 +97,13 @@ export default function Residential() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <img src="/api/placeholder/600/400" alt="Beautiful residential turf installation" />
+            <Image 
+              src="/api/placeholder/600/400" 
+              alt="Beautiful residential turf installation"
+              width={600}
+              height={400}
+              className={styles.heroImagePhoto}
+            />
             <div className={styles.badge}>
               Save $3,000+<br />Per Year
             </div>
@@ -290,7 +298,7 @@ export default function Residential() {
           >
             <h2>Ready for a Beautiful, Water-Free Lawn?</h2>
             <p>
-              Get your free quote today and see how much you'll save. 
+              Get your free quote today and see how much you&apos;ll save. 
               Most installations completed within one week.
             </p>
             <div className={styles.ctaActions}>

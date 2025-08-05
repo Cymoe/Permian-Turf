@@ -10,7 +10,7 @@ export default function Footer() {
           <div className={styles.company}>
             <h3>Permian Turf Solutions</h3>
             <p>
-              The Permian Basin's premier commercial turf specialist. 
+              The Permian Basin&apos;s premier commercial turf specialist. 
               Water-smart landscapes that save money and look great year-round.
             </p>
             <div className={styles.certifications}>

@@ -52,7 +52,7 @@ export default function QuoteForm({ source = 'general' }: QuoteFormProps) {
         <h3>Quote Request Received!</h3>
         <p>
           Thank you for your interest in Permian Turf Solutions. 
-          We'll contact you within 24 hours with your custom quote.
+          We&apos;ll contact you within 24 hours with your custom quote.
         </p>
         <button 
           className="btn btn-primary"
