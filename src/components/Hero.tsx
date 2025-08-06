@@ -21,6 +21,12 @@ export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
+    // Preload all images
+    heroImages.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000); // Change every 5 seconds
@@ -93,14 +99,14 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.imagePlaceholder}>
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="sync">
                 <motion.div
                   key={currentImageIndex}
                   className={styles.imageContainer}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                 >
                   <Image 
                     src={heroImages[currentImageIndex]}
