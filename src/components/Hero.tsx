@@ -1,13 +1,33 @@
 'use client';
 
 import Image from 'next/image';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Droplet, DollarSign, Zap } from 'lucide-react';
 import styles from './Hero.module.css';
 
+const heroImages = [
+  '/new_right.png',
+  '/right_two.png',
+  '/hero_right.png',
+  '/wall_right_one.png',
+  '/hero_right_2.png',
+  '/hero_right_3.png',
+  '/hero_right_4.png'
+];
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className={styles.hero}>
       <div className="container">
@@ -73,14 +93,24 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.imagePlaceholder}>
-              <Image 
-                src="/new_right.png" 
-                alt="Commercial turf installation" 
-                width={400}
-                height={270}
-                className={styles.heroImage}
-                priority
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image 
+                    src={heroImages[currentImageIndex]}
+                    alt="Commercial turf installation" 
+                    width={400}
+                    height={270}
+                    className={styles.heroImage}
+                    priority={currentImageIndex === 0}
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>

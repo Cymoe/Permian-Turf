@@ -47,7 +47,7 @@ export default function ImageShowcase() {
         <div className={styles.header}>
           <h2>Transform Your Space</h2>
           <p>
-            See how we've helped property managers, RV parks, and housing facilities 
+            See how we&apos;ve helped property managers, RV parks, and housing facilities 
             across the Permian Basin save thousands on water costs while maintaining 
             beautiful, green landscapes year-round.
           </p>
