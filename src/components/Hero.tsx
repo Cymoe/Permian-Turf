@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Droplet, DollarSign, Zap } from 'lucide-react';
 import styles from './Hero.module.css';
 
@@ -99,25 +99,16 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className={styles.imagePlaceholder}>
-              <AnimatePresence mode="sync">
-                <motion.div
-                  key={currentImageIndex}
-                  className={styles.imageContainer}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image 
-                    src={heroImages[currentImageIndex]}
-                    alt="Commercial turf installation" 
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className={styles.heroImage}
-                    priority={currentImageIndex === 0}
-                  />
-                </motion.div>
-              </AnimatePresence>
+              <div className={styles.imageContainer}>
+                <Image 
+                  src={heroImages[currentImageIndex]}
+                  alt="Commercial turf installation" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className={styles.heroImage}
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
         </div>
