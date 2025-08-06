@@ -96,6 +96,7 @@ export default function Hero() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
+                  className={styles.imageContainer}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -104,8 +105,8 @@ export default function Hero() {
                   <Image 
                     src={heroImages[currentImageIndex]}
                     alt="Commercial turf installation" 
-                    width={400}
-                    height={270}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className={styles.heroImage}
                     priority={currentImageIndex === 0}
                   />
