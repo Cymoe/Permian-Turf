@@ -79,8 +79,8 @@ export default function Hero() {
             </div>
 
             <div className={styles.actions}>
-              <Link href="/commercial" className="btn btn-primary">
-                Commercial Solutions
+              <Link href="/quote" className="btn btn-primary">
+                Get Free Quote
               </Link>
               <Link href="/water-savings" className="btn btn-outline">
                 Calculate Your Savings

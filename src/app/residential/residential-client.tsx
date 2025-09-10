@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -83,8 +84,8 @@ export default function Residential() {
               Professional quality, residential comfort.
             </p>
             <div className={styles.heroActions}>
-              <button className="btn btn-primary">Get Free Quote</button>
-              <button className="btn btn-outline">View Gallery</button>
+              <Link href="/quote" className="btn btn-primary">Get Free Quote</Link>
+              <Link href="/portfolio" className="btn btn-outline">View Gallery</Link>
             </div>
             <p className={styles.trust}>
               Join 200+ West Texas homeowners who&apos;ve made the switch
@@ -302,10 +303,10 @@ export default function Residential() {
               Most installations completed within one week.
             </p>
             <div className={styles.ctaActions}>
-              <button className="btn btn-primary">Get Your Free Quote</button>
-              <a href="/water-savings" className="btn btn-secondary">
+              <Link href="/quote" className="btn btn-primary">Get Your Free Quote</Link>
+              <Link href="/water-savings" className="btn btn-secondary">
                 Calculate Savings
-              </a>
+              </Link>
             </div>
             <p className={styles.financing}>
               Financing available • 0% interest for 12 months

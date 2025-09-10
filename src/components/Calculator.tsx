@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calculator, Droplet, DollarSign } from 'lucide-react';
 import styles from './Calculator.module.css';
@@ -43,13 +44,13 @@ export default function ROICalculator() {
           >
             <h3>Your Property Details</h3>
             
-            <div className="form-group">
-              <label className="form-label">
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>
                 Turf Area (sq ft)
               </label>
               <input
                 type="number"
-                className="form-input"
+                className={styles.formInput}
                 value={area}
                 onChange={(e) => setArea(Number(e.target.value))}
                 min="100"
@@ -65,13 +66,13 @@ export default function ROICalculator() {
               />
             </div>
 
-            <div className="form-group">
-              <label className="form-label">
+            <div className={styles.formGroup}>
+              <label className={styles.formLabel}>
                 Water Cost (per 1,000 gallons)
               </label>
               <input
                 type="number"
-                className="form-input"
+                className={styles.formInput}
                 value={waterCost}
                 onChange={(e) => setWaterCost(Number(e.target.value))}
                 min="1"
@@ -135,9 +136,9 @@ export default function ROICalculator() {
               </p>
             </div>
 
-            <button className="btn btn-primary" style={{ width: '100%' }}>
+            <Link href="/quote" className="btn btn-primary" style={{ width: '100%', display: 'block', textAlign: 'center' }}>
               Get Your Custom Quote
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>

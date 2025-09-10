@@ -1,7 +1,7 @@
 .hero {
   background: linear-gradient(135deg, var(--primary) 0%, #002244 100%);
   color: white;
-  padding: 6rem 0 4rem;
+  padding: 4rem 0 3rem;
 }
 
 .heroContent {
@@ -34,6 +34,19 @@
   text-align: center;
 }
 
+.statValue {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #EAB308;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .stat strong {
   display: block;
   font-size: 2.5rem;
@@ -49,6 +62,7 @@
 /* Workforce Section */
 .workforce {
   background: var(--background-alt);
+  padding: 3rem 0;
 }
 
 .sectionHeader {
@@ -103,7 +117,60 @@
   font-size: 1.25rem;
 }
 
+/* Case Study Section */
 .caseStudy {
+  padding: 3rem 0;
+  background: #f8f9fa;
+}
+
+.caseStudyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.caseStudyContent h2 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.caseStudyContent p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.result {
+  text-align: center;
+}
+
+.result strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.result span {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.caseStudyImage img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.caseStudyCard {
   background: white;
   padding: 2rem;
   border-radius: 1rem;
@@ -225,9 +292,44 @@
   font-weight: 500;
 }
 
+/* Process Section */
+.process {
+  padding: 3rem 0;
+}
+
+.processSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stepNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.step p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* Benefits Section */
 .benefits {
   background: var(--background-alt);
+  padding: 3rem 0;
 }
 
 .benefits h2 {
@@ -255,6 +357,18 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.iconWrapper svg {
+  width: 48px;
+  height: 48px;
+  color: #003366;
+}
+
 .benefitIcon {
   width: 48px;
   height: 48px;
@@ -275,7 +389,7 @@
 
 /* CTA Section */
 .cta {
-  background: var(--primary);
+  background: linear-gradient(135deg, #003366 0%, #002244 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -284,33 +398,64 @@
 .ctaContent h2 {
   color: white;
   margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 .ctaContent p {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .ctaActions {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
-.ctaActions .btn-outline {
-  background: transparent;
-  border: 2px solid white;
+.ctaActions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.ctaPrimaryBtn {
+  background: #EAB308;
+  color: #000000;
+  border: 2px solid #EAB308;
+}
+
+.ctaPrimaryBtn:hover {
+  background: #D97706;
+  border-color: #D97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.3);
+}
+
+.ctaOutlineBtn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.9);
   color: white;
 }
 
-.ctaActions .btn-outline:hover {
+.ctaOutlineBtn:hover {
   background: white;
-  color: var(--primary);
+  color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 /* Responsive */
@@ -326,6 +471,15 @@
 
   .benefitsGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .caseStudyGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .processSteps {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -344,9 +498,11 @@
 
   .ctaActions {
     flex-direction: column;
+    align-items: stretch;
   }
 
-  .ctaActions .btn {
+  .ctaActions a {
     width: 100%;
+    text-align: center;
   }
 }

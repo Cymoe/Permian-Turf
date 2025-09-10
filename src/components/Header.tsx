@@ -57,6 +57,9 @@ export default function Header() {
                   <Link href="/green-walls" className={styles.dropdownLink}>
                     Green Walls
                   </Link>
+                  <Link href="/pet-waste-removal" className={styles.dropdownLink}>
+                    Pet Waste Removal
+                  </Link>
                 </div>
               )}
             </div>
@@ -111,6 +114,9 @@ export default function Header() {
               </Link>
               <Link href="/green-walls" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
                 Green Walls
+              </Link>
+              <Link href="/pet-waste-removal" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Pet Waste Removal
               </Link>
             </div>
             

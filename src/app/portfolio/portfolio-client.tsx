@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -303,8 +304,8 @@ export default function Portfolio() {
             <h2>Ready to Transform Your Property?</h2>
             <p>Join these satisfied customers and start saving water and money today.</p>
             <div className={styles.ctaActions}>
-              <button className="btn btn-primary">Get Your Free Quote</button>
-              <button className="btn btn-outline">Download Portfolio PDF</button>
+              <Link href="/quote" className="btn btn-primary">Get Your Free Quote</Link>
+              <a href="/portfolio-pdf" className="btn btn-outline" download>Download Portfolio PDF</a>
             </div>
           </motion.div>
         </div>

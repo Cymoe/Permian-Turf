@@ -48,18 +48,63 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #1a1a1a;
 }
 
+/* Fix form labels for light background */
 .inputs h2 {
   color: var(--primary);
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
 }
 
+.inputs label,
+.inputs .form-label {
+  color: #1a1a1a !important;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+/* Override global form-input styles for calculator inputs */
+.inputs .form-input,
+.inputs select {
+  background: #f8f9fa !important;
+  border: 2px solid #e0e0e0 !important;
+  color: #1a1a1a !important;
+}
+
+.inputs .form-input::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.inputs .form-input:focus,
+.inputs select:focus {
+  background: white !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1) !important;
+}
+
+/* Fix select dropdown arrow for light background */
+.inputs select.form-input {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23003366' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e") !important;
+  background-position: right 0.5rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 1.5em 1.5em !important;
+}
+
+.inputs select.form-input option {
+  background: white !important;
+  color: #1a1a1a !important;
+}
+
 .value {
   float: right;
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .slider {
@@ -97,17 +142,17 @@
   justify-content: space-between;
   margin-top: 0.25rem;
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: #6b6b6b;
 }
 
 .advancedToggle {
   width: 100%;
   padding: 0.75rem;
   margin-top: 1.5rem;
-  background: var(--background-alt);
-  border: 2px solid var(--neutral);
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
   border-radius: 0.5rem;
-  color: var(--text-primary);
+  color: #1a1a1a;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -124,6 +169,16 @@
   border-top: 1px solid #e0e0e0;
 }
 
+.advanced label {
+  color: #1a1a1a !important;
+}
+
+/* Ensure all headings in calculator section have proper contrast */
+.calculator h2,
+.calculator h3 {
+  color: var(--primary) !important;
+}
+
 /* Results */
 .results {
   display: flex;
@@ -132,7 +187,7 @@
 }
 
 .results h2 {
-  color: var(--primary);
+  color: var(--primary) !important;
   font-size: 1.5rem;
 }
 
@@ -157,7 +212,7 @@
 }
 
 .resultHeader h3 {
-  color: var(--text-primary);
+  color: #1a1a1a !important;
   margin: 0;
 }
 
@@ -170,7 +225,7 @@
 .label {
   display: block;
   font-size: 0.875rem;
-  color: var(--text-secondary);
+  color: #6b6b6b;
   margin-bottom: 0.5rem;
 }
 
@@ -185,7 +240,7 @@
 .bigNumber small {
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #6b6b6b;
 }
 
 /* Cost Breakdown */
@@ -200,7 +255,7 @@
   justify-content: space-between;
   padding: 0.5rem 0;
   border-bottom: 1px solid #f0f0f0;
-  color: var(--text-secondary);
+  color: #6b6b6b;
 }
 
 .costTotal {
@@ -209,7 +264,7 @@
   padding: 1rem 0 0;
   font-weight: 700;
   font-size: 1.125rem;
-  color: var(--text-primary);
+  color: #1a1a1a;
   border-top: 2px solid var(--primary);
   margin-top: 0.5rem;
 }
@@ -291,7 +346,7 @@
 }
 
 .environmental h3 {
-  color: var(--primary);
+  color: var(--primary) !important;
   margin-bottom: 2rem;
 }
 

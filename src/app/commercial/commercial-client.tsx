@@ -252,9 +252,9 @@ export default function CommercialPageClient() {
               Get a free property assessment and ROI analysis. 
               See exactly how much you&apos;ll save with commercial-grade artificial turf.
             </p>
-            <div className={styles.ctaButtons}>
-              <a href="/quote" className="btn btn-primary">Get Commercial Quote</a>
-              <a href="tel:432-555-0100" className="btn btn-outline">Call (432) 555-0100</a>
+            <div className={styles.ctaActions}>
+              <a href="/quote" className={styles.ctaPrimaryBtn}>Get Commercial Quote</a>
+              <a href="tel:432-555-0100" className={styles.ctaOutlineBtn}>Call (432) 555-0100</a>
             </div>
           </motion.div>
         </div>

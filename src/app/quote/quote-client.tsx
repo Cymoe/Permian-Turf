@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import QuoteForm from '@/components/QuoteForm';
+import MultiStepQuoteForm from '@/components/MultiStepQuoteForm';
 import { motion } from 'framer-motion';
 import { Calculator, Phone, Clock, Shield } from 'lucide-react';
 import styles from './quote.module.css';
@@ -38,7 +38,7 @@ export default function Quote() {
               transition={{ delay: 0.2 }}
             >
               <h2>Request Your Custom Quote</h2>
-              <QuoteForm source="quote-page" />
+              <MultiStepQuoteForm />
             </motion.div>
 
             <motion.div

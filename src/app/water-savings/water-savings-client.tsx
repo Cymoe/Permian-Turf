@@ -1,10 +1,12 @@
 'use client';
 
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Droplet, DollarSign, Leaf, Download } from 'lucide-react';
+import { generatePDFReport } from '@/utils/generatePDFReport';
 import styles from './water-savings.module.css';
 
 export default function WaterSavings() {
@@ -37,6 +39,31 @@ export default function WaterSavings() {
   const totalNaturalGrassCost = waterCost + sewerCost + maintenanceAnnual + mowingCost + fertilizerCost;
   const turfInstallCost = area * (propertyType === 'commercial' ? 7 : 8);
   const paybackYears = turfInstallCost / totalNaturalGrassCost;
+
+  // Download Report Function - Generates Professional PDF
+  const handleDownloadReport = () => {
+    generatePDFReport({
+      propertyType,
+      area,
+      irrigationMonths,
+      gallonsPerSqFtPerWeek,
+      annualWaterGallons,
+      annualWaterThousands,
+      waterRate,
+      sewerRate,
+      maintenanceCost,
+      waterCost,
+      sewerCost,
+      maintenanceAnnual,
+      mowingFrequency,
+      mowingCost,
+      fertilizerApps,
+      fertilizerCost,
+      totalNaturalGrassCost,
+      turfInstallCost,
+      paybackYears
+    });
+  };
   
   // 10-year analysis
   const tenYearNaturalCost = totalNaturalGrassCost * 10;
@@ -286,10 +313,10 @@ export default function WaterSavings() {
               </div>
 
               <div className={styles.actions}>
-                <button className="btn btn-primary">
+                <Link href="/quote" className="btn btn-primary">
                   Get Your Custom Quote
-                </button>
-                <button className={styles.downloadBtn}>
+                </Link>
+                <button className={styles.downloadBtn} onClick={handleDownloadReport}>
                   <Download size={18} />
                   Download Report
                 </button>
