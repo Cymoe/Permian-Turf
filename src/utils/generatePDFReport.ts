@@ -51,11 +51,11 @@ export function generatePDFReport(data: ReportData) {
   doc.rect(0, 0, pageWidth, 40, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(24);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.text('WATER SAVINGS ANALYSIS REPORT', pageWidth / 2, 20, { align: 'center' });
   doc.setFontSize(12);
-  doc.setFont(undefined, 'normal');
-  doc.text('Lone Star Turf - Permian Basin\'s Water-Saving Solution', pageWidth / 2, 30, { align: 'center' });
+  doc.setFont('helvetica', 'normal');
+  doc.text('Permian Turf - Permian Basin\'s Water-Saving Solution', pageWidth / 2, 30, { align: 'center' });
   
   yPosition = 50;
   doc.setTextColor(0, 0, 0);
@@ -70,13 +70,13 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('PROPERTY INFORMATION', margin, yPosition);
   yPosition += 12;
   
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   doc.text(`Property Type: ${data.propertyType === 'commercial' ? 'Commercial' : 'Residential'}`, margin, yPosition);
   yPosition += lineHeight;
@@ -90,13 +90,13 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('WATER USAGE ANALYSIS', margin, yPosition);
   yPosition += 12;
   
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   doc.text(`Weekly water per sq ft: ${data.gallonsPerSqFtPerWeek} gallons`, margin, yPosition);
   yPosition += lineHeight;
@@ -114,14 +114,14 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('ANNUAL COST BREAKDOWN (Natural Grass)', margin, yPosition);
   yPosition += 12;
   
   // Cost table
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   const costs = [
     ['Water Cost:', `$${data.waterCost.toFixed(2)}`],
@@ -141,7 +141,7 @@ export function generatePDFReport(data: ReportData) {
   doc.setLineWidth(0.5);
   doc.line(margin, yPosition - 2, pageWidth - margin, yPosition - 2);
   yPosition += 2;
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('TOTAL ANNUAL COST:', margin, yPosition);
   doc.text(`$${data.totalNaturalGrassCost.toFixed(2)}`, pageWidth - margin - 30, yPosition);
@@ -152,13 +152,13 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('ARTIFICIAL TURF INVESTMENT', margin, yPosition);
   yPosition += 12;
   
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   doc.text(`Installation Cost: $${data.turfInstallCost.toFixed(2).toLocaleString()}`, margin, yPosition);
   yPosition += lineHeight;
@@ -168,10 +168,10 @@ export function generatePDFReport(data: ReportData) {
   // Highlight payback period
   doc.setFillColor(255, 235, 0);
   doc.rect(margin - 2, yPosition - 6, maxWidth + 4, 10, 'F');
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.text(`Payback Period: ${data.paybackYears.toFixed(1)} years`, margin, yPosition);
   yPosition += lineHeight;
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.text('15-Year Warranty Included', margin, yPosition);
   yPosition += 15;
   
@@ -180,13 +180,13 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('LONG-TERM SAVINGS PROJECTIONS', margin, yPosition);
   yPosition += 12;
   
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   const projections = [
     ['5-Year Savings:', `$${(data.totalNaturalGrassCost * 5).toFixed(2).toLocaleString()}`],
@@ -201,10 +201,10 @@ export function generatePDFReport(data: ReportData) {
   });
   
   yPosition += 10;
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.text('NET SAVINGS (After Installation):', margin, yPosition);
   yPosition += lineHeight;
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   
   const netSavings = [
     ['5 Years:', `$${((data.totalNaturalGrassCost * 5) - data.turfInstallCost).toFixed(2).toLocaleString()}`],
@@ -224,13 +224,13 @@ export function generatePDFReport(data: ReportData) {
   doc.setFillColor(240, 240, 240);
   doc.rect(margin, yPosition - 5, maxWidth, 10, 'F');
   doc.setFontSize(14);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   doc.setTextColor(0, 51, 102);
   doc.text('ENVIRONMENTAL IMPACT', margin, yPosition);
   yPosition += 12;
   
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   doc.setTextColor(0, 0, 0);
   doc.text(`Annual Water Saved: ${Math.round(data.annualWaterGallons).toLocaleString()} gallons`, margin, yPosition);
   yPosition += lineHeight;
@@ -249,18 +249,18 @@ export function generatePDFReport(data: ReportData) {
   doc.rect(margin, yPosition, maxWidth, 35, 'F');
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(12);
-  doc.setFont(undefined, 'bold');
+  doc.setFont('helvetica', 'bold');
   yPosition += 10;
   doc.text('READY TO START SAVING?', pageWidth / 2, yPosition, { align: 'center' });
   doc.setFontSize(11);
-  doc.setFont(undefined, 'normal');
+  doc.setFont('helvetica', 'normal');
   yPosition += 8;
   doc.text('Call: (432) 555-0100', pageWidth / 2, yPosition, { align: 'center' });
   yPosition += 6;
-  doc.text('Email: info@lonestarturf.com', pageWidth / 2, yPosition, { align: 'center' });
+  doc.text('Email: info@permianturf.com', pageWidth / 2, yPosition, { align: 'center' });
   yPosition += 6;
-  doc.text('Visit: www.lonestarturf.com', pageWidth / 2, yPosition, { align: 'center' });
+  doc.text('Visit: www.permianturf.com', pageWidth / 2, yPosition, { align: 'center' });
   
   // Save the PDF
-  doc.save(`Lone_Star_Turf_Water_Savings_Report_${data.area}sqft_${new Date().toISOString().split('T')[0]}.pdf`);
+  doc.save(`Permian_Turf_Water_Savings_Report_${data.area}sqft_${new Date().toISOString().split('T')[0]}.pdf`);
 }

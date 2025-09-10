@@ -54,8 +54,8 @@ export default function StickyQuoteButton() {
 
   const handleQuoteClick = () => {
     // Track conversion
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
         event_category: 'Sticky CTA',
         event_label: 'Get Quote'
       });
@@ -64,8 +64,8 @@ export default function StickyQuoteButton() {
   };
 
   const handleCalculatorClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
         event_category: 'Sticky CTA',
         event_label: 'Calculator'
       });
@@ -74,8 +74,8 @@ export default function StickyQuoteButton() {
   };
 
   const handleCallClick = () => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'click', {
         event_category: 'Sticky CTA',
         event_label: 'Phone Call'
       });
@@ -128,11 +128,11 @@ export default function StickyQuoteButton() {
             initial={{ scale: 0, opacity: 0 }}
             animate={{ 
               scale: 1, 
-              opacity: 1,
-              y: buttonY
+              opacity: 1
             }}
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            style={{ y: buttonY }}
           >
             {/* Back to Top Button */}
             {showBackToTop && (

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Droplet,
   DollarSign,
@@ -13,7 +12,6 @@ import {
   Calculator,
   Sun,
   TrendingDown,
-  Home,
   Calendar,
   ChevronLeft,
   ChevronRight
@@ -89,8 +87,8 @@ export default function ResidentialTurfLanding() {
     setIsSubmitting(true);
     
     // Track high-value conversion
-    if (typeof window !== 'undefined' && typeof (window as typeof window & { gtag?: Function }).gtag === 'function') {
-      (window as typeof window & { gtag?: Function }).gtag!('event', 'conversion', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
         'send_to': 'AW-XXXXXXXXX/XXXXXXXXX',
         'value': savings.installCost,
         'currency': 'USD'

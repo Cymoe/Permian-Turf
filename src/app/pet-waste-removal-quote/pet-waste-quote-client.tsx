@@ -15,7 +15,6 @@ import {
   Mail,
   MapPin,
   Dog,
-  Clock,
   CreditCard,
   ArrowRight,
   ArrowLeft,
@@ -106,7 +105,7 @@ export default function PetWasteQuote() {
     return totalPrice;
   };
 
-  const handleInputChange = (field: keyof FormData, value: any) => {
+  const handleInputChange = (field: keyof FormData, value: FormData[keyof FormData]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -473,7 +472,7 @@ export default function PetWasteQuote() {
                   </label>
                   <select
                     value={formData.propertyType}
-                    onChange={(e) => handleInputChange('propertyType', e.target.value as any)}
+                    onChange={(e) => handleInputChange('propertyType', e.target.value)}
                     className={styles.select}
                   >
                     <option value="residential">Single Family Home</option>

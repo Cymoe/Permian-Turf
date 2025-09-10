@@ -305,7 +305,6 @@ export default function Portfolio() {
             <p>Join these satisfied customers and start saving water and money today.</p>
             <div className={styles.ctaActions}>
               <Link href="/quote" className="btn btn-primary">Get Your Free Quote</Link>
-              <a href="/portfolio-pdf" className="btn btn-outline" download>Download Portfolio PDF</a>
             </div>
           </motion.div>
         </div>

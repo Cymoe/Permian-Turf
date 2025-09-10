@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Droplet, DollarSign, Leaf, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Droplet, DollarSign, Leaf, Download, X, User, Mail, Phone } from 'lucide-react';
 import { generatePDFReport } from '@/utils/generatePDFReport';
 import styles from './water-savings.module.css';
 
@@ -22,6 +22,20 @@ export default function WaterSavings() {
   const [maintenanceCost, setMaintenanceCost] = useState(0.5);
   const [mowingFrequency, setMowingFrequency] = useState(30);
   const [fertilizerApps] = useState(4);
+  
+  // Modal and form state
+  const [showModal, setShowModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: ''
+  });
 
   // Calculations
   const gallonsPerSqFtPerWeek = propertyType === 'commercial' ? 0.75 : 0.62;
@@ -40,8 +54,61 @@ export default function WaterSavings() {
   const turfInstallCost = area * (propertyType === 'commercial' ? 7 : 8);
   const paybackYears = turfInstallCost / totalNaturalGrassCost;
 
-  // Download Report Function - Generates Professional PDF
-  const handleDownloadReport = () => {
+  // Validate form
+  const validateForm = () => {
+    const newErrors = { name: '', email: '', phone: '' };
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+      isValid = false;
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = 'Phone is required';
+      isValid = false;
+    } else if (!/^\d{3}-?\d{3}-?\d{4}$/.test(formData.phone.replace(/[-()\s]/g, ''))) {
+      newErrors.phone = 'Phone number is invalid';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  // Handle form submission and PDF generation
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Track lead generation
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'Water Savings Calculator',
+        event_label: 'PDF Download',
+        value: totalNaturalGrassCost
+      });
+    }
+
+    // Simulate API call to save lead
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    console.log('Lead captured:', formData);
+
+    // Generate PDF
     generatePDFReport({
       propertyType,
       area,
@@ -63,6 +130,26 @@ export default function WaterSavings() {
       turfInstallCost,
       paybackYears
     });
+
+    setIsSubmitting(false);
+    setShowModal(false);
+    
+    // Reset form
+    setFormData({ name: '', email: '', phone: '' });
+    setErrors({ name: '', email: '', phone: '' });
+  };
+
+  // Open modal when download button clicked
+  const handleDownloadReport = () => {
+    setShowModal(true);
+  };
+
+  // Handle input change
+  const handleInputChange = (field: keyof typeof formData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    if (errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: '' }));
+    }
   };
   
   // 10-year analysis
@@ -354,6 +441,116 @@ export default function WaterSavings() {
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Form Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <>
+            <motion.div
+              className={styles.modalBackdrop}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowModal(false)}
+            />
+            <motion.div
+              className={styles.modal}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ type: 'spring', damping: 25 }}
+              style={{
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)'
+              }}
+            >
+              <button
+                className={styles.closeButton}
+                onClick={() => setShowModal(false)}
+                aria-label="Close modal"
+              >
+                <X size={24} />
+              </button>
+              
+              <div className={styles.modalContent}>
+                <h3>Get Your Free Water Savings Report</h3>
+                <p>Enter your contact information to receive your personalized PDF report showing exactly how much you can save.</p>
+                
+                <form onSubmit={handleFormSubmit} className={styles.modalForm}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="name">
+                      <User size={18} />
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
+                      placeholder="John Smith"
+                      className={errors.name ? styles.error : ''}
+                    />
+                    {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                  </div>
+                  
+                  <div className={styles.formGroup}>
+                    <label htmlFor="email">
+                      <Mail size={18} />
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      placeholder="john@company.com"
+                      className={errors.email ? styles.error : ''}
+                    />
+                    {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+                  </div>
+                  
+                  <div className={styles.formGroup}>
+                    <label htmlFor="phone">
+                      <Phone size={18} />
+                      Phone *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      placeholder="(432) 555-0100"
+                      className={errors.phone ? styles.error : ''}
+                    />
+                    {errors.phone && <span className={styles.errorText}>{errors.phone}</span>}
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    className={`btn btn-primary ${styles.submitButton}`}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>Generating Report...</>
+                    ) : (
+                      <>
+                        <Download size={18} />
+                        Download PDF Report
+                      </>
+                    )}
+                  </button>
+                  
+                  <p className={styles.disclaimer}>
+                    Your information is secure and will only be used to send your report and provide a custom quote.
+                  </p>
+                </form>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </>

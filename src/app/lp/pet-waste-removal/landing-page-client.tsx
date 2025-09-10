@@ -83,8 +83,8 @@ export default function PetWasteLandingPage() {
     setIsSubmitting(true);
     
     // Track conversion
-    if (typeof window !== 'undefined' && typeof (window as typeof window & { gtag?: Function }).gtag === 'function') {
-      (window as typeof window & { gtag?: Function }).gtag!('event', 'conversion', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
         'send_to': 'AW-XXXXXXXXX/XXXXXXXXX', // Replace with your conversion ID
         'value': price.firstMonth,
         'currency': 'USD'

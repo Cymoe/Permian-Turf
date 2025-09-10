@@ -6,7 +6,7 @@ import {
   Send, User, Mail, Phone, Building, MessageSquare,
   ChevronRight, ChevronLeft, MapPin, Ruler, DollarSign,
   Calendar, CheckCircle, Home, Building2, Truck, Droplet,
-  Trees, Layers
+  Trees
 } from 'lucide-react';
 import { getCurrentSeason } from '@/utils/seasons';
 import styles from './MultiStepQuoteForm.module.css';
@@ -149,8 +149,8 @@ export default function MultiStepQuoteForm() {
     setIsSubmitting(true);
     
     // Track conversion
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'generate_lead', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'generate_lead', {
         currency: 'USD',
         value: formData.projectSize === 'xlarge' ? 50000 : 25000,
       });
@@ -164,7 +164,7 @@ export default function MultiStepQuoteForm() {
     setIsSubmitting(false);
   };
 
-  const updateFormData = (field: keyof FormData, value: any) => {
+  const updateFormData = (field: keyof FormData, value: FormData[keyof FormData]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error for this field
     if (errors[field]) {

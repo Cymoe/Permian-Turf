@@ -54,6 +54,9 @@ export default function Header() {
                   <Link href="/residential" className={styles.dropdownLink}>
                     Residential
                   </Link>
+                  <Link href="/pet-turf" className={styles.dropdownLink}>
+                    Pet Turf
+                  </Link>
                   <Link href="/green-walls" className={styles.dropdownLink}>
                     Green Walls
                   </Link>

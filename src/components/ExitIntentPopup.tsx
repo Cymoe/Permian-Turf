@@ -89,7 +89,7 @@ export default function ExitIntentPopup() {
     return () => {
       document.removeEventListener('mouseout', handleMouseLeave);
     };
-  }, [hasBeenShown]);
+  }, [hasBeenShown, DEBUG_MODE]);
 
   const handleCalculate = async () => {
     setIsCalculating(true);
@@ -103,8 +103,8 @@ export default function ExitIntentPopup() {
     e.preventDefault();
     
     // Track conversion
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'generate_lead', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'generate_lead', {
         event_category: 'Exit Intent',
         event_label: 'Water Savings Calculator',
         value: monthlyDroughtSavings

@@ -242,7 +242,7 @@ export default function PetWasteRemoval() {
                   10% bundle discount for turf customers
                 </li>
               </ul>
-              <Link href="/residential" className="btn btn-secondary">
+              <Link href="/pet-turf" className="btn btn-secondary">
                 Learn About Pet-Friendly Turf
               </Link>
             </div>
