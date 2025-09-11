@@ -1,0 +1,345 @@
+.hero {
+  background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.successIcon {
+  color: #4ade80;
+  margin-bottom: 24px;
+  animation: checkBounce 0.6s ease-out;
+}
+
+@keyframes checkBounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 60px 0;
+  background: #0f172a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.card h2 {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.timelineItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 44px;
+  width: 2px;
+  height: calc(100% + 24px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.timelineIcon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.timelineIcon span {
+  color: white;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.timelineContent h3 {
+  font-size: 1.125rem;
+  margin-bottom: 4px;
+  color: #10b981;
+}
+
+.timelineContent p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.includes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.includeItem {
+  display: flex;
+  gap: 16px;
+  align-items: start;
+}
+
+.includeIcon {
+  width: 24px;
+  height: 24px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.includeItem h3 {
+  font-size: 1.125rem;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.includeItem p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.resources {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.resources h2 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.resources > p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.resourceLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resourceLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.resourceLink:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.resourceLink svg:first-child {
+  color: #10b981;
+}
+
+.resourceLink svg:last-child {
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.urgentCard {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.urgentCard h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+  color: white;
+}
+
+.urgentCard p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.urgentCard .btn {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.hours {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+}
+
+.hours svg {
+  opacity: 0.8;
+}
+
+.hours p {
+  margin: 0;
+}
+
+.statsCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.statsCard h3 {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat:last-child {
+  border-bottom: none;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+}
+
+.testimonial {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.testimonial p {
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.testimonial cite {
+  color: #10b981;
+  font-size: 0.875rem;
+  font-style: normal;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .resourceLinks {
+    gap: 8px;
+  }
+
+  .resourceLink {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+}

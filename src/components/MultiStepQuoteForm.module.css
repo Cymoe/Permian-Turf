@@ -369,3 +369,20 @@
     font-size: 24px;
   }
 }
+
+/* Loading spinner for redirect */
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  margin: 20px auto 0;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #10b981;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

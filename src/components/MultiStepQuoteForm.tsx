@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Send, User, Mail, Phone, Building, MessageSquare,
@@ -68,6 +69,7 @@ const BIOPHILIC_OPTIONS = [
 ];
 
 export default function MultiStepQuoteForm() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -91,6 +93,32 @@ export default function MultiStepQuoteForm() {
   });
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    // Small delay to allow animation to start
+    const scrollTimeout = setTimeout(() => {
+      // Try to find the quote section heading first
+      const quoteHeading = document.querySelector('h2');
+      if (quoteHeading && quoteHeading.textContent?.includes('Request Your Custom Quote')) {
+        // Scroll to the heading with some offset
+        const yOffset = -20; 
+        const y = quoteHeading.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        // Fallback to form container
+        const formElement = document.querySelector(`.${styles.container}`);
+        if (formElement) {
+          formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          // Final fallback to page top
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }, 100);
+
+    return () => clearTimeout(scrollTimeout);
+  }, [currentStep]);
 
   const validateStep = (step: number): boolean => {
     const newErrors: Partial<FormData> = {};
@@ -162,6 +190,16 @@ export default function MultiStepQuoteForm() {
     console.log('Form submitted:', formData);
     setSubmitted(true);
     setIsSubmitting(false);
+    
+    // Store form data in session storage for the thank you page (optional)
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('quoteFormData', JSON.stringify(formData));
+    }
+    
+    // Redirect to thank you page
+    setTimeout(() => {
+      router.push('/thank-you');
+    }, 500);
   };
 
   const updateFormData = (field: keyof FormData, value: FormData[keyof FormData]) => {
@@ -194,46 +232,9 @@ export default function MultiStepQuoteForm() {
         animate={{ opacity: 1, scale: 1 }}
       >
         <CheckCircle className={styles.successIcon} />
-        <h3>Quote Request Received!</h3>
-        <p>
-          We&apos;ll prepare your custom water-saving proposal and contact you within 24 hours.
-        </p>
-        <div className={styles.successDetails}>
-          <p><strong>What happens next:</strong></p>
-          <ul>
-            <li>✓ Custom quote based on your {formData.projectSize} project</li>
-            <li>✓ Water savings calculation for your property</li>
-            {formData.biophilicAreas.length > 0 && (
-              <li>✓ Biophilic design options for green walls & features</li>
-            )}
-            <li>✓ Available financing options</li>
-            <li>✓ Installation timeline for {formData.timeline}</li>
-          </ul>
-        </div>
-        <button 
-          className="btn btn-primary"
-          onClick={() => {
-            setSubmitted(false);
-            setCurrentStep(1);
-            setFormData({
-              propertyType: '',
-              propertyName: '',
-              projectSize: '',
-              areas: [],
-              biophilicAreas: [],
-              timeline: '',
-              name: '',
-              email: '',
-              phone: '',
-              city: 'Midland',
-              budget: '',
-              waterBill: '',
-              message: '',
-            });
-          }}
-        >
-          Submit Another Request
-        </button>
+        <h3>Success!</h3>
+        <p>Redirecting you to your personalized dashboard...</p>
+        <div className={styles.loadingSpinner} />
       </motion.div>
     );
   }

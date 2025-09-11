@@ -115,6 +115,9 @@ export default function Header() {
               <Link href="/residential" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
                 Residential
               </Link>
+              <Link href="/pet-turf" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
+                Pet Turf
+              </Link>
               <Link href="/green-walls" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>
                 Green Walls
               </Link>
